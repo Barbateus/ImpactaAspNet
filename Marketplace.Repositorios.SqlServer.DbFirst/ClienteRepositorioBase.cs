@@ -2,6 +2,6 @@
 {
     public class ClienteRepositorioBase
     {
-        public void Inserir(Cliente cliente)
+        public void Inserir(Cliente cliente) { }
     }
 }

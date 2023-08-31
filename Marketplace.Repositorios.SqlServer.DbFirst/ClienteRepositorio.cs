@@ -50,27 +50,20 @@ namespace Marketplace.Repositorios.SqlServer.DbFirst
 
         public void Atualizar(Cliente cliente)
         {
-            using (var contexto = new Marketplace())
+            using (var contexto = new MarketplaceEntities()) 
             {
                 contexto.Entry(cliente).State = EntityState.Modified;
                 contexto.SaveChanges();
             }
         }
 
-        public void Atualizar(Cliente cliente)
-        {
-            using (var contexto = new Marketplace())
-            {
-                contexto.Entry(cliente).State = EntityState.Modified;
-                contexto.SaveChanges();
-            }
-        }
+        
 
         public void Excluir(int id)
         {
-            using (var contexto = new Marketplace())
+            using (var contexto = new MarketplaceEntities()) 
             {
-                var cliente = contexto.Clientes.SingleOrdefault(c => c.Id == id);
+                var cliente = contexto.Clientes.SingleOrDefault(c=> c.Id == id);
 
                 if (cliente == null) return;
 
